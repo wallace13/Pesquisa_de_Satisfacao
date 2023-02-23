@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("../img/painel.jpg");
+    background-size: cover;
+}
+.card{
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 15px;
+    color: white;
+}
+.card-body{
+    padding: 40px;
+}
+.painel-votos{
+    width: 650px;
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title-votacao{
+    padding-right: 5px;
+    font-size: 15px;
+}
+img{
+	width: 50px;
+	height:50px;
+}
+.btn-voto{
+    width: 150px;
+    padding: 5px !important;
+    margin: 5px !important;
+}
+@media (max-device-width: 900px) {
+    body {
+        background-image: url("../img/painel2.jpg");
+        position: relative;
+        height: 100vh;
+        width: 100vw;
+    }
+    .buttons{
+        display: block;
+    }
+    .card-header{
+        text-align: center;
+    }
+    .painel-votos{
+        width: auto;
+    }
+    .title-votacao{
+        display: block;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;        
+    }
+    .card{
+        width: 100vw;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    #vote{
+        margin-top: 15px;
+        margin-bottom: 5px;
+    }
+    #tipoVoto{
+        display: none;
+    }
+    .btn-voto{
+        width: 100%;
+    }
+    .navbar-nav{
+        display: none !important;
+    }
+    .navbar-toggler{
+        display: none !important;
+    }
+    .nav-link{
+        display: none !important;
+    }
+}

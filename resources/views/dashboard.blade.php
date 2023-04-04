@@ -59,6 +59,10 @@
                             <th scope="row">{{ $CRU}}</th>
                             <th scope="row">{{ $CRU > 0 ? number_format((($CRU/$total)*100) , 1) : $CRU ,' %' }}</th>
                         </tr>
+                        <tr>
+                            <th colspan="2">Total de Votos</th>
+                            <th scope="row">{{$total}}</th>
+                        </tr>
                     </tbody>
                   </table>
             </div>
@@ -123,6 +127,10 @@
                             <th scope="row">Ruim</th>
                             <th scope="row">{{$ARU}}</th>
                             <th scope="row">{{ $ARU > 0 ? number_format((($ARU/$total)*100) , 1) : $ARU ,' %' }}</th>
+                        </tr>
+                        <tr>
+                            <th colspan="2">Total de Votos</th>
+                            <th scope="row">{{$total}}</th>
                         </tr>
                     </tbody>
                   </table>

@@ -32,12 +32,20 @@
             @csrf
             @method('PUT')
             <fieldset {{ $valor }}>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                <button class="btn btn-success btn-voto" name="voto" value="otimo"><img src = "/img/otimo.png" alt = "projeto"></button>
-                <button class="btn btn-primary btn-voto" name="voto" value="bom"><img src = "/img/bom.png" alt = "projeto"></button>
-                <button class="btn btn-warning btn-voto" name="voto" value="regular"><img src = "/img/regular.png" alt = "projeto"></button>    
-                <button class="btn btn-danger btn-voto" name="voto" value="ruim"><img src = "/img/ruim.png" alt = "projeto"></button>
-            </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                    <button class="btn btn-success btn-voto" name="voto" value="otimo">
+                        @svg('bi-emoji-laughing-fill')
+                    </button>
+                    <button class="btn btn-primary btn-voto"  name="voto" value="bom">
+                        @svg('bi-emoji-smile-fill')
+                    </button>
+                    <button class="btn btn-warning btn-voto" name="voto" value="regular">
+                        @svg('bi-emoji-neutral-fill')
+                    </button>    
+                    <button class="btn btn-danger btn-voto"name="voto" value="ruim">
+                        @svg('bi-emoji-frown-fill')
+                    </button>
+                </div>
             </fieldset>
         </form>  
         

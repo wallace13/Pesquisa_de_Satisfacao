@@ -28,7 +28,7 @@
                                 <th scope="col">Principal</th>
                                 <th scope="col">Sobremesa</th>
                                 <th scope="col">Suco</th>
-                                <th colspan="2">Ações</th>
+                                <th colspan="3" class="text-center" width="50">Ações</th>
                             </tr>
                         </thead>
 
@@ -42,9 +42,12 @@
                                     <td>{{ $a->principal }}</td>
                                     <td>{{ $a->sobremesa }}</td>
                                     <td>{{ $a->suco }}</td>
-                                    <td><a href="{{ route('almoco.edit', $a->id) }}">Editar</a></td>
-                                    <td>
-                                        <a href="#deleteModal-{{ $a->id }}" type="button" data-bs-toggle="modal" data-bs-target="#deleteModal-{{ $a->id }}">Excluir</a>  
+                                    <td width="50"><a href="{{ route('almoco.show', $a->id) }}">@svg('feathericon-eye')</a></td>
+                                    <td width="50"><a href="{{ route('almoco.edit', $a->id) }}">@svg('feathericon-edit')</a></td>
+                                    <td width="50">
+                                        <a class="deletar" href="#deleteModal-{{ $a->id }}" type="button" data-bs-toggle="modal" data-bs-target="#deleteModal-{{ $a->id }}">
+                                            @svg('feathericon-trash-2')
+                                        </a>  
                                         @include('almoco.modal')  
                                     </td>
                                 </tr>

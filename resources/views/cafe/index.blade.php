@@ -27,7 +27,7 @@
                                 <th scope="col">Data</th>
                                 <th scope="col">Principal</th>
                                 <th scope="col">Opção</th>
-                                <th colspan="2">Ações</th>
+                                <th colspan="3" class="text-center" width="50">Ações</th>
                             </tr>
                         </thead>
 
@@ -38,9 +38,12 @@
                                     <td>{{ date('d/m/Y', strtotime($c->data)) }}</td>
                                     <td>{{ $c->principal }}</td>
                                     <td>{{ $c->opcao }}</td>
-                                    <td><a href="{{ route('cafe.edit', $c->id) }}">Editar</a></td>
-                                    <td>
-                                        <a href="#deleteModal-{{ $c->id }}" type="button" data-bs-toggle="modal" data-bs-target="#deleteModal-{{ $c->id }}" >Excluir</a>                           
+                                    <td width="50"><a href="{{ route('cafe.show', $c->id) }}">@svg('feathericon-eye')</a></td>
+                                    <td width="50"><a href="{{ route('cafe.edit', $c->id) }}">@svg('feathericon-edit')</a></td>
+                                    <td width="50">
+                                        <a href="#deleteModal-{{ $c->id }}" type="button" data-bs-toggle="modal" data-bs-target="#deleteModal-{{ $c->id }}" >
+                                            @svg('feathericon-trash-2')
+                                        </a>                           
                                         @include('cafe.modal')
                                     </td>
                                 </tr>

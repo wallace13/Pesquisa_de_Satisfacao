@@ -27,7 +27,7 @@
                                 <th scope="col">Nome</th>
                                 <th scope="col">E-mail</th>
                                 <th scope="col">Nivel de Permissão</th>
-                                <th colspan="2"></th>
+                                <th colspan="3" class="text-center" width="50">Ações</th>
                             </tr>
                         </thead>
 
@@ -38,9 +38,12 @@
                                     <td>{{ $funcionario->name }}</td>
                                     <td>{{ $funcionario->email }}</td>
                                     <td>{{ ($funcionario->nivelPermissao == 1) ? 'Gerente' : 'Funcionário' ;  }}</td>
-                                    <td><a href="{{ route('administrativo.edit', $funcionario->id) }}">Editar</a></td>
-                                    <td>
-                                        <a href="#deleteModal-{{ $funcionario->id }}" type="button" data-bs-toggle="modal" data-bs-target="#deleteModal-{{ $funcionario->id }}">Excluir</a>  
+                                    <td width="50"><a href="{{ route('administrativo.show', $funcionario->id) }}">@svg('feathericon-eye')</a></td>
+                                    <td width="50"><a href="{{ route('administrativo.edit', $funcionario->id) }}">@svg('feathericon-edit')</a></td>
+                                    <td width="50">
+                                        <a href="#deleteModal-{{ $funcionario->id }}" type="button" data-bs-toggle="modal" data-bs-target="#deleteModal-{{ $funcionario->id }}">
+                                            @svg('feathericon-trash-2')
+                                        </a>  
                                         @include('administrativo.modal')  
                                     </td>
                                 </tr>

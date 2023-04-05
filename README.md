@@ -2,7 +2,7 @@
 
 ## Sobre
 
-Projeto desenvolvido em laravel, com o intuito de promover uma versão web, de sistemas de pesquisa de satisfação de restaurantes. Funcionalidades
+Projeto desenvolvido em laravel, com o intuito de promover uma versão web de pesquisa de satisfação de restaurantes. Funcionalidades
 
 - Cadastro de cardápios.
 - Votação de cardápios (Ótimo, Bom, Regular e Ruim)

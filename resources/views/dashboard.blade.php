@@ -2,124 +2,135 @@
 
 @section('content')
 <div class="row mb-3 ml-2 mr-2">
-    <div class="col-sm-6">
-        <div class="card">
+    <div class="col-sm-6 mb-3 mb-sm-0">
+        <div class="card "  style="height: 600px;">
             <div class="card-header">
-                Andamento da Votação do Café - <span id="dataCafe"><spa>
+                Andamento da Votação do Café - <span id="dataCafe"><span>
             </div>
             <div class="card-body">
-                    <div class="row">
-                      <div class="col-5 h-600 p-3" style=" height: 180px; font-size: 12px;">
-                        <p class="card-text text-center">
-                            <span id="principal"></span><br>
-                            <span id="opcao"></span>
-                        </p>
-                      </div>
-                      <div class="col-7">
-                        <div id="piechartCafe" style="width: 100%; height: 80%;"></div>
-                      </div>
+                <div class="row">
+                    <div class="col-5 h-600 p-3" style=" height: 180px; font-size: 12px;">
+                    <p class="card-text text-center">
+                        <span id="principal"></span><br>
+                        <span id="opcao"></span>
+                    </p>
                     </div>
-                <table class="table text-center" style="font-size: 14px; margin-bottom: 0;">
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Votos</th>
-                        <th scope="col"> % </th>
-                        <th scope="col">Gráfico</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">Ótimo</th>
-                            <th scope="row" id='co'></th>
-                            <th scope="row" id='tco'></th>
-                            <th scope="row" rowspan="4">
-                                <div id="colunaCafe" style="width: 400px; height: 100%;"></div>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th scope="row">Bom</th>
-                            <th scope="row" id='cb'></th>
-                            <th scope="row" id='tcb'></th>
-                        </tr>
-                        <tr>
-                            <th scope="row">Regular</th>
-                            <th scope="row" id='cre'></th>
-                            <th scope="row" id='tcre'></th>
-                        </tr>
-                        <tr>
-                            <th scope="row">Ruim</th>
-                            <th scope="row" id='cru'></th>
-                            <th scope="row" id='tcru'></th>
-                        </tr>
-                        <tr>
-                            <th colspan="2">Total de Votos</th>
-                            <th scope="row" id="ctotal"></th>
-                        </tr>
-                    </tbody>
-                  </table>
+                    <div class="col-7">
+                        <p class="fs-6 text-center">Gráfico Pizza</p>
+                        <div id="piechartCafe" style="width: 100%; height: 80%;"></div>
+                    </div>
+                </div>
+                <div class="row pt-5">
+                    <div class="col-4 h-600 p-3" style=" height: 180px; font-size: 12px;">
+                        <table class="table text-center" style="font-size: 12px; width:60px; margin-bottom: 0;">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Votos</th>
+                                <th scope="col"> % </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Ótimo</th>
+                                    <th scope="row" id='co'></th>
+                                    <th scope="row" id='tco'></th>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Bom</th>
+                                    <th scope="row" id='cb'></th>
+                                    <th scope="row" id='tcb'></th>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Regular</th>
+                                    <th scope="row" id='cre'></th>
+                                    <th scope="row" id='tcre'></th>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Ruim</th>
+                                    <th scope="row" id='cru'></th>
+                                    <th scope="row" id='tcru'></th>
+                                </tr>
+                                <tr>
+                                    <th colspan="2">Total de Votos</th>
+                                    <th scope="row" id="ctotal"></th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-8">
+                        <p class="fs-6 text-center">Gráfico Coluna</p>
+                        <div id="colunaCafe" style="width: 400px; height: 200px;"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <div class="col-sm-6 mb-3 mb-sm-0">
-        <div class="card">
+        <div class="card"  style="height: 600px;">
             <div class="card-header">
-                Andamento da Votação do Almoço - <span id="dataAlmoco"><spa>
+                Andamento da Votação do Almoço - <span id="dataAlmoco"><span>
             </div>
             <div class="card-body">
-                    <div class="row">
-                        <div class="col-5 h-600 p-3" style=" height: 180px; font-size: 12px;">
-                            <p class="card-text text-center">
-                                <span id="salada"></span><br>
-                                <span id="complemento"></span><br>
-                                <span id="principalAlmoco"></span><br>
-                                <span id="sobremesa"></span><br>
-                                <span id="suco"></span><br>
-                            </p>
-                        </div>
-                        <div class="col-7">
-                            <div id="piechartAlmoco" style="width: 100%; height: 80%;"></div>
-                        </div>
+                <div class="row">
+                    <div class="col-5 h-600 p-3" style=" height: 180px; font-size: 12px;">
+                        <p class="card-text text-center">
+                            <span id="salada"></span><br>
+                            <span id="complemento"></span><br>
+                            <span id="principalAlmoco"></span><br>
+                            <span id="sobremesa"></span><br>
+                            <span id="suco"></span><br>
+                        </p>
                     </div>
-                <table class="table text-center" style="font-size: 14px; margin-bottom: 0;">
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Votos</th>
-                        <th scope="col"> % </th>
-                        <th scope="col">Gráfico</th>
-                      </tr>
-                    </thead>
-                    <tbody class="item">
-                        <tr>
-                            <th scope="row">Ótimo</th>
-                            <th scope="row" id='ao'></th>
-                            <th scope="row" id='tao'></th>
-                            <th scope="row" rowspan="4">
-                                <div id="colunaAlmoco" style="width: 400px; height: 100%;"></div>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th scope="row">Bom</th>
-                            <th scope="row" id='ab'></th>
-                            <th scope="row" id='tab'></th>
-                        </tr>
-                        <tr>
-                            <th scope="row">Regular</th>
-                            <th scope="row" id='are'></th>
-                            <th scope="row" id='tare'></th>
-                        </tr>
-                        <tr>
-                            <th scope="row">Ruim</th>
-                            <th scope="row" id='aru'></th>
-                            <th scope="row" id='taru'></th>
-                        </tr>
-                        <tr>
-                            <th colspan="2">Total de Votos</th>
-                            <th scope="row" id='atotal'></th>
-                        </tr>
-                    </tbody>
-                  </table>
+                    <div class="col-7">
+                        <p class="fs-6 text-center">Gráfico Pizza</p>
+                        <div id="piechartAlmoco" style="width: 100%; height: 80%;"></div>
+                    </div>
+                </div>
+                <div class="row pt-5">
+                    <div class="col-4">
+                        <table class="table text-center" style="font-size: 12px; width:60px; margin-bottom: 0;">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Votos</th>
+                                <th scope="col"> % </th>
+                              </tr>
+                            </thead>
+                            <tbody class="item">
+                                <tr>
+                                    <th scope="row">Ótimo</th>
+                                    <th scope="row" id='ao'></th>
+                                    <th scope="row" id='tao'></th>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Bom</th>
+                                    <th scope="row" id='ab'></th>
+                                    <th scope="row" id='tab'></th>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Regular</th>
+                                    <th scope="row" id='are'></th>
+                                    <th scope="row" id='tare'></th>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Ruim</th>
+                                    <th scope="row" id='aru'></th>
+                                    <th scope="row" id='taru'></th>
+                                </tr>
+                                <tr>
+                                    <th colspan="2">Total de Votos</th>
+                                    <th scope="row" id='atotal'></th>
+                                </tr>
+                            </tbody>
+                          </table>
+                    </div>
+                    <div class="col-8">
+                        <p class="fs-6 text-center">Gráfico Coluna</p>
+                        <div id="colunaAlmoco" style="width: 400px; height: 200px;"></div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -159,7 +170,7 @@
         document.getElementById('salada').innerText = (data.almoco != null ? data.almoco.salada : "Salada");
         document.getElementById('complemento').innerText = (data.almoco != null ? data.almoco.complemento : "Complemento");
         document.getElementById('principalAlmoco').innerText = (data.almoco != null ? data.almoco.principal : "Principal");
-        document.getElementById('sobremesa').innerText = (data.almoco != null ? data.almoco.sobremessa : "Sobremessa");
+        document.getElementById('sobremesa').innerText = (data.almoco != null ? data.almoco.sobremesa : "Sobremesa");
         document.getElementById('suco').innerText = (data.almoco != null ? data.almoco.suco: "Suco");
 
         const ao = document.getElementById('ao').innerText =  data.votoA !== null ? data.votoA.otimo : 0;
@@ -188,7 +199,7 @@
                 fontName: 'Arial',
                 'chartArea': {'width': '90%', 'height': '80%'},
                 'legend': {'position': 'bottom'},
-                'colors': ['blue', 'green', 'orange', 'red']
+                'colors': ['#0d6efd', '#198754', '#ffc107', '#dc3545']
             };
 
             var chartCafe = new google.visualization.PieChart(document.getElementById('piechartCafe'));
@@ -210,7 +221,7 @@
                 fontName: 'Arial',
                 'chartArea': {'width': '90%', 'height': '80%'},
                 'legend': {'position': 'bottom'},
-                'colors': ['blue', 'green', 'orange', 'red']
+                'colors': ['#0d6efd', '#198754', '#ffc107', '#dc3545']
             };
 
             var chartAlmoco = new google.visualization.PieChart(document.getElementById('piechartAlmoco'));
@@ -226,10 +237,10 @@
         function drawColumnChartCafe() {
             const dataCafe = google.visualization.arrayToDataTable([
                 ["Element", "Votos", { role: "style" } ],
-                ["Ótimo", co, "blue"],
-                ["Bom", cb, "green"],
-                ["Regular", cre, "orange"],
-                ["Ruim", cru, "red"]
+                ["Ótimo", co, "'#0d6efd"],
+                ["Bom", cb, "#198754"],
+                ["Regular", cre, "#ffc107"],
+                ["Ruim", cru, "#dc3545"]
             ]);
 
             const viewCafe = new google.visualization.DataView(dataCafe);
@@ -251,10 +262,10 @@
         function drawColumnChartAlmoco() {
             const dataAlmoco = google.visualization.arrayToDataTable([
                 ["Element", "Votos", { role: "style" } ],
-                ["Ótimo", ao, "blue"],
-                ["Bom", ab, "green"],
-                ["Regular", are, "orange"],
-                ["Ruim", aru, "red"]
+                ["Ótimo", ao, "#0d6efd"],
+                ["Bom", ab, "#198754"],
+                ["Regular", are, "#ffc107"],
+                ["Ruim", aru, "#dc3545"]
             ]);
 
             const viewAlmoco = new google.visualization.DataView(dataAlmoco);

@@ -23,7 +23,7 @@
                     @endif
                 @else
                     <li class="nav-item">
-                        <a href="{{route('dashboard')}}" class="nav-link">Home</a>
+                        <a href="{{route('dashboard')}}" class="nav-link">Dashboard</a>
                     </li>
                     <li class="nav-item">
                         <a href="{{route('almoco.index')}}" class="nav-link">Almoço</a>

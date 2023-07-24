@@ -16,8 +16,6 @@ class VotacaoAlmocoController extends Controller
     public function index()
     {
         $dataHoje = date("Y-m-d");
-        
-       
         $almoco = $this->show($dataHoje);
         $data = (isset($almoco)) ? implode("/",array_reverse(explode("-",$almoco->data))) : " ";
         $dado = (isset($almoco)) ? $data : "Votação encerrada" ;

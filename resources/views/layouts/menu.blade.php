@@ -12,7 +12,6 @@
             <ul class="navbar-nav mr-auto">
 
             </ul>
-
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
@@ -24,6 +23,9 @@
                     @endif
                 @else
                     <li class="nav-item">
+                        <a href="{{route('dashboard')}}" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
                         <a href="{{route('almoco.index')}}" class="nav-link">Almoço</a>
                     </li>
                     <li class="nav-item">
@@ -31,6 +33,9 @@
                     </li>
                     <li class="nav-item">
                         <a href="{{route('relatorioIndex')}}" class="nav-link">Relatorios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('votacoes')}}" class="nav-link">Votações</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -41,9 +46,6 @@
                             <a class="dropdown-item" href="{{route('comparativo') }}">Comparativo</a>
                             <a class="dropdown-item" href="{{route('anual') }}">Anual</a>
                         </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{route('dashboard')}}" class="nav-link">Home</a>
                     </li>
                     @if ( Auth::user()->nivelPermissao == 1)
                         <li class="nav-item dropdown">
@@ -57,10 +59,13 @@
                     @endif                    
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}
+                            {{ ucfirst(Auth::user()->name) }}
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            @if (Route::has('password.request'))
+                                <a class="dropdown-item" href="{{ route('password.request') }}">Alterar senha</a>
+                            @endif
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
@@ -70,9 +75,6 @@
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
                             </form>
-                            @if (Route::has('password.request'))
-                                <a class="dropdown-item" href="{{ route('password.request') }}">Alterar senha</a>
-                            @endif
                         </div>
                     </li>
                 @endguest

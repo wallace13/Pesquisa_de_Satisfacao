@@ -23,10 +23,10 @@
     @endphp
     <div id="vote">Vote Abaixo:</div>
         <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-            <span class="btn-voto text-center" id="tipoVoto">Ótimo</span>
-            <span class="btn-voto text-center" id="tipoVoto">Bom</span>
-            <span class="btn-voto text-center" id="tipoVoto">Regular</span>    
-            <span class="btn-voto text-center" id="tipoVoto">Ruim</span>
+            <span class="text-voto text-center" id="tipoVoto">Ótimo</span>
+            <span class="text-voto text-center" id="tipoVoto">Bom</span>
+            <span class="text-voto text-center" id="tipoVoto">Regular</span>    
+            <span class="text-voto text-center" id="tipoVoto">Ruim</span>
         </div>
         <form method="post" action="/votacaoAlmoco/votarAlmoco/{{ isset($almoco->id) ? $almoco->id : 0; }}">
             @csrf

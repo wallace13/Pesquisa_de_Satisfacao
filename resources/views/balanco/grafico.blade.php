@@ -57,8 +57,8 @@
                                 <td>{{ $Pbom.'%' }}</td>
                                 <td>{{ $regular }}</td>
                                 <td>{{ $Pregular.'%' }}</td>
-                                <td>{{ $Ptotal }}</td>
-                                <td>{{ $TPer.'%' }}</td>
+                                <td>{{ $ruim }}</td>
+                                <td>{{ $Pruim.'%' }}</td>
                             </tr>
                         </tbody>
                     </table>

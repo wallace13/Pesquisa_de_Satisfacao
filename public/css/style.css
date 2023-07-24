@@ -1,7 +1,10 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-image: url("../img/painel.jpg");
+    background-color: white;
     background-size: cover;
+    padding: 0;
+    margin: 0;
 }
 .card{
     background-color: rgba(0, 0, 0, 0.8);
@@ -31,15 +34,76 @@ img{
 	width: 50px;
 	height:50px;
 }
+.text-voto{
+    width: 150px;
+    padding: 5px !important;
+    margin: 5px !important;
+}
 .btn-voto{
     width: 150px;
     padding: 5px !important;
     margin: 5px !important;
+    position: relative;
+    overflow: hidden;
+    
 }
 .btn-voto svg{
     width: 50px;
 	height:50px;
     color: white;
+    transition: transform 0.3s ease-in-out;
+}
+.btn-voto::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 20%, transparent 50%);
+    opacity: 0;
+    transform: scale(0.1);
+    transition: opacity 0.3s, transform 0.3s;
+}
+.btn-success:hover  {
+    color: #fff;
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+.btn-success:hover svg {
+    color:#38c172;
+}
+.btn-primary:hover  {
+    color: #fff;
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+.btn-primary:hover svg {
+    color:#3490dc;
+}
+.btn-warning:hover  {
+    color: #fff;
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+.btn-warning:hover svg {
+    color:#ffed4a;
+}
+.btn-danger:hover  {
+    color: #fff;
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+.btn-danger:hover svg {
+    color:#e3342f;
+}
+.btn-voto:hover svg {
+    transform: scale(1.2);
+}
+
+.btn-voto:hover::before {
+    opacity: 1;
+    transform: scale(1);
 }
 @media (max-device-width: 900px) {
     body {
@@ -92,4 +156,74 @@ img{
     .nav-link{
         display: none !important;
     }
+}
+
+
+/*efeitos*/
+.img-container {
+    position: relative;
+    display: inline-block;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.img-zoom-container img {
+    transition: transform 0.3s ease-out;
+    height: 100px; /* Define a altura desejada para as imagens */
+    width: 100%; /* Faz a imagem ocupar toda a largura disponível */
+}
+
+.img-text-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Define a altura desejada para a barra opaca */
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.img-text {
+    color: white;
+    font-size: 20px;
+    font-weight: bold; /* Aplica negrito ao texto */
+    text-transform: uppercase; /* Converte o texto para letras maiúsculas */
+    letter-spacing: 2px; /* Aumenta o espaçamento entre as letras */
+    transform: translateY(30%);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7); /* Adiciona um brilho ao texto */
+
+}
+
+.img-container:hover .img-zoom-container img {
+    transform: scale(1.2);
+    filter: brightness(120%);
+}
+
+.img-container:hover .img-text-overlay {
+    opacity: 1;
+}
+
+/* Efeitos para dispositivos maiores (desktop) */
+.img-container:hover .img-zoom-container img {
+    transform: scale(1.2);
+    /* Adicione um filtro de brilho na imagem quando o mouse estiver sobre ela */
+    filter: brightness(120%);
+}
+
+/* Efeitos para dispositivos menores (celulares) */
+@media (max-width: 767px) {
+    .img-container.active .img-zoom-container img {
+        transform: scale(1.2);
+        /* Adicione um filtro de brilho na imagem quando ela estiver ativa (tocada) */
+        filter: brightness(120%);
+    }
+}
+
+/* Remove o sublinhado nos links em dispositivos móveis */
+a {
+    text-decoration: none;
 }

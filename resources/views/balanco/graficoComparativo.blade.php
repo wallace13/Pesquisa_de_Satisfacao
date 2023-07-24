@@ -86,8 +86,8 @@
                                 <td>{{ $Pbom.'%' }}</td>
                                 <td>{{ $regular }}</td>
                                 <td>{{ $Pregular.'%' }}</td>
-                                <td>{{ $Ptotal }}</td>
-                                <td>{{ $TPer.'%' }}</td>
+                                <td>{{ $ruim }}</td>
+                                <td>{{ $Pruim.'%' }}</td>
                             </tr>
                             <tr>
                                 <td>{{ $mes2 }}</td>
@@ -97,8 +97,8 @@
                                 <td>{{ $Pbom2.'%' }}</td>
                                 <td>{{ $regular2 }}</td>
                                 <td>{{ $Pregular2.'%' }}</td>
-                                <td>{{ $Ptotal2 }}</td>
-                                <td>{{ $TPer2.'%' }}</td>
+                                <td>{{ $ruim2 }}</td>
+                                <td>{{ $Pruim2.'%' }}</td>
                             </tr>
                         </tbody>
                     </table>

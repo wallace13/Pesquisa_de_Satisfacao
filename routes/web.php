@@ -25,14 +25,20 @@ Route::resource('votacaoCafe', 'App\Http\Controllers\VotacaoCafeController');
 Route::put('votacaoCafe/votarCafe/{id}', 'App\Http\Controllers\VotacaoCafeController@votarCafe')->name('votarCafe');
 
 Auth::routes(['verify' => true]);
-Route::get('/dashboard', 'App\Http\Controllers\HomeController@dashboard')->name('dashboard')->middleware('verified');
+
+Route::get('/dashboard/atualizar-votos', 'App\Http\Controllers\HomeController@dashboard')->name('votos.atualizar');
+
+Route::get('/dashboard', 'App\Http\Controllers\HomeController@showDashboard')->name('dashboard')->middleware('verified');
+
+Route::any('/votacoes/detalhe', 'App\Http\Controllers\HomeController@votacao')->name('votacaoDetalhe')->middleware('verified');
+
+Route::any('/votacoes', 'App\Http\Controllers\HomeController@showVotacao')->name('votacoes')->middleware('verified');
 
 Route::resource('cafe', 'App\Http\Controllers\CafeController')->middleware('verified');
 
 Route::resource('almoco', 'App\Http\Controllers\AlmocoController')->middleware('verified');
 
 Route::resource('administrativo', 'App\Http\Controllers\AdministrativoController')->middleware('permissao');
-
 
 Route::any('relatorio', 'App\Http\Controllers\RelatorioController@index')->name('relatorioIndex')->middleware('verified');
 

@@ -37,6 +37,9 @@
                     <li class="nav-item">
                         <a href="{{route('votacoes')}}" class="nav-link">Votações</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{route('sugestoes')}}" class="nav-link">Sugestões</a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             Balanços
@@ -56,7 +59,7 @@
                                 <a class="dropdown-item" href="{{route('administrativo.index') }}">Funcionario</a>
                             </div>
                         </li>
-                    @endif                    
+                    @endif
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ ucfirst(Auth::user()->name) }}

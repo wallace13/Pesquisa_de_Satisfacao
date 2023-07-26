@@ -177,6 +177,8 @@ class RelatorioController extends Controller
         $pdf->setPaper('a4', 'portrait');
         //tipo de papel: a4, letter
         //orientação: landscape (paisagem), portrait (retrato)
+
+
         //return $pdf->download('Relatorio'.ucwords( $tipo ).'_'.$mes.'_'.$ano.'.pdf');
         return $pdf->stream('Relatorio'.ucwords( $tipo ).'_'.$mes.'_'.$ano.'.pdf');
         

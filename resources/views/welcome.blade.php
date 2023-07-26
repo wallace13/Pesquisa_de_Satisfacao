@@ -27,7 +27,10 @@
                     </div>
                 </a>
             </div>
-        </div>        
+        </div>
+        <div class="p-2 row">
+            <a href="sugestao" class="btn btn-sugestao btn-outline-success" type="button">Dê sua Sugestão!</a>
+        </div>
     </div>
     <script>
         // Adiciona uma classe 'active' ao tocar na imagem em dispositivos móveis

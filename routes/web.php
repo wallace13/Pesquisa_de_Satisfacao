@@ -24,7 +24,12 @@ Route::put('votacaoAlmoco/votarAlmoco/{id}', 'App\Http\Controllers\VotacaoAlmoco
 Route::resource('votacaoCafe', 'App\Http\Controllers\VotacaoCafeController');
 Route::put('votacaoCafe/votarCafe/{id}', 'App\Http\Controllers\VotacaoCafeController@votarCafe')->name('votarCafe');
 
+Route::get('sugestao', 'App\Http\Controllers\SugestaoController@create')->name('sugestao');
+Route::post('sugestao/store', 'App\Http\Controllers\SugestaoController@store')->name('sugestaoStore');
+
 Auth::routes(['verify' => true]);
+
+Route::get('sugestoes', 'App\Http\Controllers\SugestaoController@index')->name('sugestoes');
 
 Route::get('/dashboard/atualizar-votos', 'App\Http\Controllers\HomeController@dashboard')->name('votos.atualizar');
 

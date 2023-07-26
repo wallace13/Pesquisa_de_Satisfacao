@@ -21,8 +21,8 @@
                     </div>
                 </div>
                 <div class="row pt-5">
-                    <div class="col-4 h-600 p-3" style=" height: 180px; font-size: 12px;">
-                        <table class="table text-center" style="font-size: 12px; width:60px; margin-bottom: 0;">
+                    <div class="col-5 h-600 p-3" style=" height: 180px; font-size: 12px;">
+                        <table class="table text-center" style="font-size: 14px; margin-bottom: 0;">
                             <thead>
                               <tr>
                                 <th scope="col">#</th>
@@ -58,7 +58,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="col-8">
+                    <div class="col-7">
                         <p class="fs-6 text-center">Gráfico Coluna</p>
                         <div id="colunaCafe" style="width: 400px; height: 200px;"></div>
                     </div>
@@ -88,8 +88,8 @@
                     </div>
                 </div>
                 <div class="row pt-5">
-                    <div class="col-4">
-                        <table class="table text-center" style="font-size: 12px; width:60px; margin-bottom: 0;">
+                    <div class="col-5">
+                        <table class="table text-center" style="font-size: 14px; margin-bottom: 0;">
                             <thead>
                               <tr>
                                 <th scope="col">#</th>
@@ -125,7 +125,7 @@
                             </tbody>
                           </table>
                     </div>
-                    <div class="col-8">
+                    <div class="col-7">
                         <p class="fs-6 text-center">Gráfico Coluna</p>
                         <div id="colunaAlmoco" style="width: 400px; height: 200px;"></div>
                     </div>

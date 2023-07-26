@@ -21,11 +21,9 @@ class HomeController extends Controller
 
     public function dashboard()
     {
-        set_time_limit(300);
         $response = new StreamedResponse(function () {
             while (true) {
-                $data = $this->getVotacoesData();
-
+                $data = $this->getData();
                 echo "data: " . json_encode($data) . "\n\n";
                 ob_flush();
                 flush();
@@ -40,26 +38,6 @@ class HomeController extends Controller
         return $response;
     }
 
-    private function getVotacoesData()
-    {
-        $dataHoje = date("Y-m-d");
-        $almoco = VotacaoAlmocoController::show($dataHoje);
-        $cafe = VotacaoCafeController::show($dataHoje);
-
-        $idAlmoco = isset($almoco->id) ? $almoco->id : 0;
-        $idCafe = isset($cafe->id) ? $cafe->id : 0;
-
-        $votoA = VotacaoAlmocoController::showId($idAlmoco);
-        $votoB = VotacaoCafeController::showId($idCafe);
-
-        return [
-            'almoco' => $almoco,
-            'cafe' => $cafe,
-            'votoA' => $votoA,
-            'votoB' => $votoB,
-        ];
-    }
-
     public function showVotacao()
     {
         return view('votacoes.indexVotacoes');
@@ -68,14 +46,35 @@ class HomeController extends Controller
     public function votacao(Request $request)
     {
         $dataSelecionada = $request->input('data');
-        $data = $this->getVotacoesData();
-
+        $data = $this->getData($dataSelecionada);
+        
         return view('votacoes.votacoes', [
             'dataSeleciona' => $dataSelecionada,
             'almoco' => $data['almoco'],
             'cafe' => $data['cafe'],
             'votoA' => $data['votoA'],
-            'votoB' => $data['votoB'],
+            'votoB' => $data['votoB']
         ]);
+    }
+
+    private function getData($dataSelecionada = null)
+    {
+        $dataHoje = date("Y-m-d");
+
+        $almoco = app(VotacaoAlmocoController::class)->show($dataSelecionada ?? $dataHoje);
+        $cafe = app(VotacaoCafeController::class)->show($dataSelecionada ?? $dataHoje);
+
+        $idAlmoco = isset($almoco->id) ? $almoco->id : 0;
+        $idCafe = isset($cafe->id) ? $cafe->id : 0;
+
+        $votoA = app(VotacaoAlmocoController::class)->showId($idAlmoco);
+        $votoB = app(VotacaoCafeController::class)->showId($idCafe);
+
+        return [
+            'almoco' => $almoco,
+            'cafe' => $cafe,
+            'votoA' => $votoA,
+            'votoB' => $votoB,
+        ];
     }
 }

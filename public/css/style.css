@@ -45,7 +45,7 @@ img{
     margin: 5px !important;
     position: relative;
     overflow: hidden;
-    
+
 }
 .btn-voto svg{
     width: 50px;
@@ -65,36 +65,36 @@ img{
     transform: scale(0.1);
     transition: opacity 0.3s, transform 0.3s;
 }
-.btn-success:hover  {
+.bt-success:hover  {
     color: #fff;
     background-color: #ffffff;
     border-color: #ffffff;
 }
-.btn-success:hover svg {
+.bt-success:hover svg {
     color:#38c172;
 }
-.btn-primary:hover  {
+.bt-primary:hover  {
     color: #fff;
     background-color: #ffffff;
     border-color: #ffffff;
 }
-.btn-primary:hover svg {
+.bt-primary:hover svg {
     color:#3490dc;
 }
-.btn-warning:hover  {
+.bt-warning:hover  {
     color: #fff;
     background-color: #ffffff;
     border-color: #ffffff;
 }
-.btn-warning:hover svg {
+.bt-warning:hover svg {
     color:#ffed4a;
 }
-.btn-danger:hover  {
+.bt-danger:hover  {
     color: #fff;
     background-color: #ffffff;
     border-color: #ffffff;
 }
-.btn-danger:hover svg {
+.bt-danger:hover svg {
     color:#e3342f;
 }
 .btn-voto:hover svg {
@@ -129,7 +129,7 @@ img{
     .btn{
         display: flex;
         align-items: center;
-        justify-content: center;        
+        justify-content: center;
     }
     .card{
         width: 100vw;
@@ -156,6 +156,11 @@ img{
     .nav-link{
         display: none !important;
     }
+    .btns-sugestao{
+        margin: 10px;
+        width:100%;
+    }
+
 }
 
 
@@ -226,4 +231,8 @@ img{
 /* Remove o sublinhado nos links em dispositivos móveis */
 a {
     text-decoration: none;
+}
+
+.btn-sugestao{
+    width: 500px;
 }

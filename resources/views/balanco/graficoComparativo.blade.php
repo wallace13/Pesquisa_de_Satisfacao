@@ -41,6 +41,10 @@
                                 $regular = 0;
                                 $ruim = 0;
                             }
+                            
+                            $data = [$otimo, $bom, $regular, $ruim];
+                            $jsonData = json_encode($data);
+
                             $Ptotal = $otimo + $bom + $regular + $ruim;
             
                             $Potimo = $otimo > 0 ? $Potimo = number_format((($otimo /$Ptotal)*100) , 1) : $Potimo = $otimo;
@@ -68,6 +72,9 @@
                                 $ruim2 = 0;
                             }
             
+                            $data2 = [$otimo2, $bom2, $regular2, $ruim2];
+                            $jsonData2 = json_encode($data2);
+
                             $Ptotal2 = $otimo2 + $bom2 + $regular2 + $ruim2;
             
                             $Potimo2 = $otimo2 > 0 ? $Potimo2 = number_format((($otimo2 /$Ptotal2)*100) , 1) : $Potimo2 = $otimo2;
@@ -102,7 +109,13 @@
                             </tr>
                         </tbody>
                     </table>
-                    <div id="chart_div" style="width: 100%; height: 350px;"></div>
+                    @php 
+                        $tipoGrafico = ['tipo' => 'chart_div', 'mes' => $mes, 'mes2' => $mes2];
+                        $jsonTipo = json_encode($tipoGrafico);
+                    @endphp
+                    <div id="graficoContainer" style="height: 350px; width: 100%;">
+                        <canvas id="chart_div"></canvas>
+                    </div>
                 </div>
             </div>
         </div>
@@ -110,29 +123,9 @@
 </div>
 @endsection
 
-<!--Grafico Comparativo-->
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">
-google.charts.load('current', {'packages':['corechart']});
-google.charts.setOnLoadCallback(drawVisualization);
-
-function drawVisualization() {
-// Some raw data (not necessarily accurate)
-var data = google.visualization.arrayToDataTable([
-    ['','{{ $mes }}','{{ $mes2 }}'],
-    ['Otimo',{{ $otimo }},{{ $otimo2 }}],
-    ['Bom',{{ $bom }},{{ $bom2 }}],
-    ['Regular',{{ $regular }},{{ $regular2 }}],
-    ['Ruim',{{ $ruim }},{{ $ruim2 }}]
-]);
-
-var options = {
-    vAxis: {title: 'Votos'},
-    seriesType: 'bars',
-    series: {5: {type: 'line'}}
-};
-
-var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
-chart.draw(data, options);
-}
+<script>
+    var satisfactionData = {!! $jsonData !!};
+    var satisfactionData2 = {!! $jsonData2 !!};
+    var tipoGrafico = {!! $jsonTipo !!};
 </script>
+<script src="{{ asset('js/balancos.js') }}" defer></script>

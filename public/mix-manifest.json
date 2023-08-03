@@ -1,4 +1,10 @@
 {
     "/js/app.js": "/js/app.js",
+    "/js/chart.js": "/js/chart.js",
+    "/js/dashboard.js": "/js/dashboard.js",
+    "/js/graficoColuna.js": "/js/graficoColuna.js",
+    "/js/graficoPizza.js": "/js/graficoPizza.js",
+    "/js/graficoComparativo.js": "/js/graficoComparativo.js",
+    "/js/balancos.js": "/js/balancos.js",
     "/css/app.css": "/css/app.css"
 }

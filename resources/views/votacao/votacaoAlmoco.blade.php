@@ -36,13 +36,13 @@
                     <button class="btn btn-success bt-success btn-voto" name="voto" value="otimo">
                         @svg('bi-emoji-laughing-fill')
                     </button>
-                    <button class="btn btn-primary bt-primary btn-voto"  name="voto" value="bom">
+                    <button class="btn btn-primary bt-primary btn-voto" name="voto" value="bom">
                         @svg('bi-emoji-smile-fill')
                     </button>
                     <button class="btn btn-warning bt-warning btn-voto" name="voto" value="regular">
                         @svg('bi-emoji-neutral-fill')
                     </button>
-                    <button class="btn btn-danger  bt-danger btn-voto"name="voto" value="ruim">
+                    <button class="btn btn-danger  bt-danger btn-voto" name="voto" value="ruim">
                         @svg('bi-emoji-frown-fill')
                     </button>
                 </div>

@@ -39,6 +39,10 @@
                                 $regular = 0;
                                 $ruim = 0;
                             }
+                            // Create a PHP array to hold the data
+                            $data = [$otimo, $bom, $regular, $ruim];
+                            // Convert the PHP array to a JSON string
+                            $jsonData = json_encode($data);
 
                             $Ptotal = $otimo + $bom + $regular + $ruim;
             
@@ -62,73 +66,23 @@
                             </tr>
                         </tbody>
                     </table>
-                    @php $tipo=($grafico == "pizza" ? "piechart" : "coluna");@endphp
-                    <div id="{{ $tipo }}" style="width: 100%; height: 350px;"></div>
+                    
+                    @php 
+                        $tipo=($grafico == "pizza" ? "piechart" : "coluna");
+                        $tipoGrafico = ['tipo' => $tipo];
+                        $jsonTipo = json_encode($tipoGrafico);
+                    @endphp
+                    <div id="graficoContainer" style="height: 350px; width: 100%;">
+                        <canvas id="{{ $tipo }}"></canvas>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 @endsection
-
-<!--Grafico Coluna -->
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">
-    google.charts.load("current", {packages:['corechart']});
-    google.charts.setOnLoadCallback(drawChart);
-    function drawChart() {
-    var data = google.visualization.arrayToDataTable([
-        ["Element", "votos", { role: "style" } ],
-        ["Otimo", {{ $otimo }}, "blue"],
-        ["Bom", {{ $bom }}, "green"],
-        ["Regular", {{ $regular }}, "orange"],
-        ["Ruim", {{ $ruim }}, "red"]
-    ]);
-
-    var view = new google.visualization.DataView(data);
-    view.setColumns([0, 1,
-                    { calc: "stringify",
-                        sourceColumn: 1,
-                        type: "string",
-                        role: "annotation" },
-                    2]);
-
-    var options = {
-        backgroundColor: 'white',
-        fontName: 'Arial',
-        bar: {groupWidth: "95%"},
-        legend: { position: "none" },
-    };
-    var chart = new google.visualization.ColumnChart(document.getElementById("coluna"));
-    chart.draw(view, options);
-}
+<script>
+    var satisfactionData = {!! $jsonData !!};
+    var tipoGrafico = {!! $jsonTipo !!};
 </script>
-<!--Grafico Pizza-->
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">
-google.charts.load('current', {'packages':['corechart']});
-google.charts.setOnLoadCallback(drawChart);
-
-function drawChart() {
-
-    var data = google.visualization.arrayToDataTable([
-    ['Voto', 'Total'],
-    ["Otimo", {{ $otimo }}],
-    ["Bom", {{ $bom }}],
-    ["Regular", {{ $regular }}],
-    ["Ruim", {{ $ruim }}]
-    ]);
-
-    var options = {
-    backgroundColor: 'white',
-    fontName: 'Arial',
-    'chartArea': {'width': '90%', 'height': '80%'},
-    'legend': {'position': 'bottom'},
-    'colors': ['green', 'blue', 'orange', 'red']
-    };
-
-    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-    chart.draw(data, options);
-}
-</script>
+<script src="{{ asset('js/balancos.js') }}" defer></script>
